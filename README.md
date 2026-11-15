@@ -1,5 +1,7 @@
 # Trailing Stop-Loss Study
 
+[![CI](https://github.com/Avinash186200/trailing-stop-loss-study/actions/workflows/ci.yml/badge.svg)](https://github.com/Avinash186200/trailing-stop-loss-study/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.11-blue) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 I wanted to know whether a trailing stop helps a set of trades that already have their own entry and exit rules. This repo is the framework I built for that question: take each trade, replay the bars between entry and exit, and see where an ATR-based trailing stop would have taken it out instead.
 
 Everything runs on synthetic data (a random-walk price path and random trades), so you can clone it and run it without any data files.
@@ -40,3 +42,12 @@ Outputs go to `data/outputs/` (git-ignored); set `DATA_DIR` to change that. To u
 ## Status
 
 A research framework, finished for what it is. On random-walk data a stop should not add edge, and it doesn't; that is a useful sanity check of the code rather than a result.
+
+## Original research code
+
+[`original/`](original/README.md) holds the code as I first wrote it for this work, sanitised and nothing else:
+client, company and person names replaced, credentials and local paths removed, data files and notebook outputs
+dropped. It is kept so the real work can be read alongside the maintained version. Some of it contains the issues
+described above; comparing the two shows each fix.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [CHANGELOG](CHANGELOG.md).
